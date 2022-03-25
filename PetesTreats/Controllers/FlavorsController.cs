@@ -83,9 +83,9 @@ namespace PetesTreats.Controllers
     [HttpPost]
     public ActionResult Search (string flavorName)
     {
-      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => String.Equals(flavor.Name, flavorName));
+      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.Name.Contains(flavorName));
       if(thisFlavor != null){
-          return RedirectToAction("Details","Flavors", new {id = thisFlavor.FlavorId});
+          return RedirectToAction("Details", "Flavors", new {id = thisFlavor.FlavorId});
       }
       else{
         return View("Index");

@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace PetesTreats.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PetesTreatsContext _db;
@@ -14,7 +15,8 @@ namespace PetesTreats.Controllers
     {
       _db = db;
     }
-
+    
+    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Flavor> model = _db.Flavors.ToList();

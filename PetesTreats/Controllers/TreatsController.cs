@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using System;
 
 namespace PetesTreats.Controllers
 {
@@ -121,6 +122,18 @@ namespace PetesTreats.Controllers
       _db.TreatFlavor.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public ActionResult Search (string treatName)
+    {
+      var thisTreat = _db.Treats.FirstOrDefault(treat => String.Equals(treat.Name, treatName));
+      if(thisTreat != null){
+          return RedirectToAction("Details", "Treats", new {id = thisTreat.TreatId});
+      }
+      else{
+        return View("Index");
+      }
     }
   }
 }

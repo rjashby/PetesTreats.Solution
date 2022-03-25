@@ -2,6 +2,19 @@
   Layout = "_Layout";
 }
 
+@using(Html.BeginForm("Search", "Flavors", FormMethod.Post))
+{
+  <label>Search for a particular Flavor profile</label>
+  @Html.TextBox("flavorName")
+  <input type="submit" value="Search">
+}
+
+@using(Html.BeginForm("Search", "Treats", FormMethod.Post))
+{
+  <label>Search for a specific Treat</label>
+  @Html.TextBox("treatName")
+  <input type="submit" value="Search">
+}
 <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p> 
 <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("Create an account", "Index", "Account")</p>

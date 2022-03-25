@@ -19,20 +19,12 @@
   color: gold;
 }
 
-#page-container {
-  position: relative;
-  min-height: 100vh;
-}
-
-#content-wrap {
-  padding-bottom: 7rem;    /* Footer height */
-}
-
 #footer {
   position: fixed;
   bottom: 4rem;
   width: 100%;
-  height: 2.5rem;            /* Footer height */
+  height: 2.5rem; 
+  text-align: center;          
 }
 
 a {

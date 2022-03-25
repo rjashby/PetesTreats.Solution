@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PetesTreats.Models.Treat
+
+<h2>Treat Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This treat has no associated flavor profiles at this time.</p>
+}
+else
+{
+  <h4>This treat has the following delicious flavor profiles:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Flavor.Name</li>
+    @using (Html.BeginForm("DeleteFlavor", "Items"))
+    {
+      @Html.Hidden("joinId", @join.TreatFlavorId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add a Flavor", "AddFlavor", new { id = Model.TreatId })</p>
+
+<p>@Html.ActionLink("Back to Treat List", "Index")</p>
+<p>@Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Delete Treat from List", "Delete", new { id = Model.TreatId })</p>

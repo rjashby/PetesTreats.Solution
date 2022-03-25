@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PetesTreats.Models.Treat
+
+<h2>Are you sure you want to delete this treat from the list?</h2>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+@Html.ActionLink("Back to Treat List", "Index")

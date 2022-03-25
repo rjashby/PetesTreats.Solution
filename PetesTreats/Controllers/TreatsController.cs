@@ -127,9 +127,9 @@ namespace PetesTreats.Controllers
     [HttpPost]
     public ActionResult Search (string treatName)
     {
-      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.Name.Contains(treatName));
+      var thisTreat = _db.Treats.Where(treat => treat.Name.Contains(treatName)).ToList();
       if(thisTreat != null){
-          return RedirectToAction("Details", "Treats", new {id = thisTreat.TreatId});
+          return View(thisTreat);
       }
       else{
         return View("Index");

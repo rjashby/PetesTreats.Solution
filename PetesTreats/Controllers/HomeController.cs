@@ -9,6 +9,11 @@ namespace PetesTreats.Controllers
 {
     public class HomeController : Controller
     {
+      public readonly PetesTreatsContext _db;
+      public HomeController(PetesTreatsContext db)
+      {
+        _db = db;
+      }
 
       [HttpGet("/")]
       public ActionResult Index()
@@ -23,4 +28,5 @@ namespace PetesTreats.Controllers
         ViewBag.Treats = _db.Treats.ToList();
         return View();
     }
+  }
 }

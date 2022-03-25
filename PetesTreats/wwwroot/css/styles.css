@@ -1,0 +1,83 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: gold;
+}
+
+#headerImg {
+  border-radius: 50%;
+  border: solid rgb(0, 0, 0) 5px;
+  width: 25%;
+}
+
+#mainLogo {
+  background-color: #2E6F95;
+}
+
+#navColor {
+  background-color: #455E89;
+  color: gold;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 7rem;    /* Footer height */
+}
+
+#footer {
+  position: fixed;
+  bottom: 4rem;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+a {
+  color: #0091AD;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: #0091AD;
+  transform: translateY(-7px);
+}
+
+body {
+  background-color: #892B64;
+  margin: 1rem;
+}
+
+li {
+  padding: 5px;
+}
+
+#engDeets li {
+  list-style-type: "🛠️";
+}
+
+#engIndex li {
+  list-style-type: "🛠️";
+}
+
+#macDeets li {
+  list-style-type: "🎰";
+}
+
+#macIndex li {
+  list-style-type: "🎰";
+}
+
+.row li {
+  list-style-type: "⚙️";
+}
+
+input {
+  background-color: lightslategray;
+}
+
+select {
+  background-color: lightslategray;
+}

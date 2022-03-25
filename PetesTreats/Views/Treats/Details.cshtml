@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+<div id="treatDeets">
 @model PetesTreats.Models.Treat
 
 <h2>Treat Details</h2>
@@ -33,3 +33,4 @@ else
 <p>@Html.ActionLink("Back to Treat List", "Index")</p>
 <p>@Html.ActionLink("Edit Treat Details", "Edit", new { id = Model.TreatId })</p>
 <p>@Html.ActionLink("Delete Treat from List", "Delete", new { id = Model.TreatId })</p>
+</div>

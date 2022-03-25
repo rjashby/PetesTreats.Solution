@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+<div id="flavorDeets">
 @model PetesTreats.Models.Flavor
 
 <h2>Flavor Details</h2>
@@ -26,3 +26,4 @@ else
 <p>@Html.ActionLink("Back to Flavor List", "Index")</p>
 <p>@Html.ActionLink("Edit Flavor Profile", "Edit", new { id = Model.FlavorId })</p>
 <p>@Html.ActionLink("Delete Flavor Profile", "Delete", new { id = Model.FlavorId })</p>
+</div>

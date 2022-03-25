@@ -54,24 +54,28 @@ li {
   padding: 5px;
 }
 
-#engDeets li {
-  list-style-type: "🛠️";
+#flavorDeets li {
+  list-style-type: "🍬";
 }
 
-#engIndex li {
-  list-style-type: "🛠️";
+#flavorIndex li {
+  list-style-type: "🍬";
 }
 
-#macDeets li {
-  list-style-type: "🎰";
+#treatDeets li {
+  list-style-type: "🍬";
 }
 
-#macIndex li {
-  list-style-type: "🎰";
+#treatIndex li {
+  list-style-type: "🍬";
 }
 
-.row li {
-  list-style-type: "⚙️";
+#both li {
+  list-style-type: "🍬";
+}
+
+#both h2 {
+  text-align: center;
 }
 
 input {
@@ -81,3 +85,4 @@ input {
 select {
   background-color: lightslategray;
 }
+

@@ -1,7 +1,7 @@
 * {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  color: gold;
+  color: #1D3557;
 }
 
 #headerImg {
@@ -11,11 +11,11 @@
 }
 
 #mainLogo {
-  background-color: #2E6F95;
+  background-color: #A8DADC;
 }
 
 #navColor {
-  background-color: #455E89;
+  background-color: #457B9D;
   color: gold;
 }
 
@@ -28,7 +28,7 @@
 }
 
 a {
-  color: #0091AD;
+  color: #E63946;
   transition: 0.5s;
 }
 
@@ -38,12 +38,17 @@ a:hover {
 }
 
 body {
-  background-color: #892B64;
+  background-color: #F1FAEE;
   margin: 1rem;
 }
 
 li {
   padding: 5px;
+  transition: 0.5s;
+}
+
+li:hover {
+  transform: translateX(7px);
 }
 
 #flavorDeets li {

@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PetesTreats.Models.Treat
+
+<h4>Edit this treat's details: @Html.DisplayFor(model => model.Description)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  @Html.Label("Select a flavor profile for this treat.")
+  @Html.DropDownList("FlavorId")
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list of treats", "Index")</p>

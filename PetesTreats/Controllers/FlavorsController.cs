@@ -41,6 +41,7 @@ namespace PetesTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisFlavor = _db.Flavors

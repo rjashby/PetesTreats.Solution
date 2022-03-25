@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Hey! Check Out This Cool List of Flavors and Treats!</h1>
+<div class="row">
+  <div class="col">
+    <h4>Flavors</h4>
+    <ul>
+      @foreach (var flavor in ViewBag.Flavors)
+      {
+        <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</li>
+      }
+    </ul>
+  </div>
+  <div class="col">
+    <h4>Treats</h4>
+    <ul>
+      @foreach(var treat in ViewBag.Treats)
+      {
+        <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+      }
+    </ul>
+  </div>
+</div>

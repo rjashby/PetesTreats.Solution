@@ -20,6 +20,7 @@
 * _Razor View Engine_
 * _MySQL Workbench_
 * _Windows PowerShell_
+* _Identity_
 
 ## Description 
 
@@ -29,7 +30,7 @@ _Users will also be able to "treat" objects to a list treats, stored in a separa
 
 _Both flavors and treats will be displayed in a list on the relevant pages. The flavor and treat tables are connected via a third join table, titled "TreatFlavor."_
 
-_The entirety of the application will be subject to login authorization. Read functionality is universal. A registered user can creat, edit, or delete flavors and treats as necessary, automatically updating the database._
+_The entirety of the application will be subject to login authorization via Identity. Read functionality is universal. A registered user can creat, edit, or delete flavors and treats as necessary, automatically updating the database._
  
 ## Setup/Installation Requirements 
 

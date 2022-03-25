@@ -85,10 +85,25 @@ namespace PetesTreats.Controllers
     public ActionResult AddFlavor(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
-      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
+      var thisTreatFlavor = _db.TreatFlavor.Where(treatflavor => treatflavor.TreatId == id);
+      
+      List<Flavor> flavors = _db.Flavors.ToList();
+      List<Flavor> flavors2 = _db.Flavors.ToList();
+
+      foreach (TreatFlavor treatFlavor in thisTreatFlavor)
+      {
+        foreach(Flavor flavor in flavors)
+        {
+          if (flavor.FlavorId == treatFlavor.FlavorId)
+          {
+            flavors2.Remove(flavor);
+          }
+        }
+      }
+      ViewBag.FlavorId = new SelectList(flavors2, "FlavorId", "Name");
       return View(thisTreat);
     }
-
+    
     [HttpPost]
     public ActionResult AddFlavor(Treat treat, int FlavorId)
     {

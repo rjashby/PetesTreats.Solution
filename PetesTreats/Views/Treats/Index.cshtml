@@ -5,7 +5,7 @@
 @using PetesTreats.Models;
 @model IEnumerable<PetesTreats.Models.Treat>
 
-<h1>Items for @User.Identity.Name</h1>
+<h1>Treats for @User.Identity.Name</h1>
 
 @if (Model.Any())
 {
@@ -22,5 +22,4 @@ else
 }
 
 <p>@Html.ActionLink("Add a new treat", "Create")</p>
-
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

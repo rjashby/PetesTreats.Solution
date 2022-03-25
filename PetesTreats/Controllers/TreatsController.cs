@@ -12,24 +12,22 @@ using System.Security.Claims;
 namespace PetesTreats.Controllers
 {
   [Authorize]
-  public class TreatController : Controller
+  public class TreatsController : Controller
   {
     private readonly PetesTreatsContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatController(UserManager<ApplicationUser> userManager, PetesTreatsContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, PetesTreatsContext db)
     {
       _userManager = userManager;
       _db = db;
     }
     
     [AllowAnonymous]
-    public async Task<ActionResult> Index()
+    public ActionResult Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      return View(userTreats);
+      List<Treat> model = _db.Treats.ToList();
+      return View(model);
     }
 
     public ActionResult Create()

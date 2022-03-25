@@ -4,11 +4,11 @@
 
 @model PetesTreats.Models.Flavor
 
-<h4>Add a new task</h4>
+<h4>Add a new flavor profile</h4>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add new category" />
+  <input type="submit" value="Add new flavor" />
 }
-<p>@Html.ActionLink("Show all categories", "Index")</p>
+<p>@Html.ActionLink("Show all flavors", "Index")</p>
